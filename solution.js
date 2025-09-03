@@ -46,7 +46,7 @@ app.get("/", async (req, res) => {
   const countries = await checkVisisted();
   const currentUser = await getCurrentUser();
   res.render("index.ejs", {
-    countries: countries,
+    countries: JSON.stringify(countries),
     total: countries.length,
     users: users,
     color: currentUser.color,
