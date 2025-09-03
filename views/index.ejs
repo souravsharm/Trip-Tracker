@@ -28,6 +28,71 @@
     <button type="submit" style="background-color: <%= color %>;">Add</button>
   </form>
 
+  <!-- Expandable Country List -->
+  <div style="margin-top: 20px;">
+    <button onclick="toggleCountryList()" style="background: #3498db; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
+      📋 Show Available Countries (50)
+    </button>
+    <div id="countryList" style="display: none; margin-top: 10px; padding: 15px; background: #f8f9fa; border-radius: 8px; max-height: 300px; overflow-y: auto;">
+      <h4 style="margin-top: 0; color: #2c3e50;">🌍 Available Countries (50 Most Popular)</h4>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 5px; font-size: 14px;">
+        <div><strong>🇺🇸 United States of America</strong></div>
+        <div><strong>🇬🇧 United Kingdom</strong></div>
+        <div><strong>🇫🇷 France</strong></div>
+        <div><strong>🇩🇪 Germany</strong></div>
+        <div><strong>🇮🇹 Italy</strong></div>
+        <div><strong>🇪🇸 Spain</strong></div>
+        <div><strong>🇨🇦 Canada</strong></div>
+        <div><strong>🇦🇺 Australia</strong></div>
+        <div><strong>🇯🇵 Japan</strong></div>
+        <div><strong>🇨🇳 China</strong></div>
+        <div><strong>🇮🇳 India</strong></div>
+        <div><strong>🇧🇷 Brazil</strong></div>
+        <div><strong>🇲🇽 Mexico</strong></div>
+        <div><strong>🇦🇷 Argentina</strong></div>
+        <div><strong>🇨🇱 Chile</strong></div>
+        <div><strong>🇵🇪 Peru</strong></div>
+        <div><strong>🇨🇴 Colombia</strong></div>
+        <div><strong>🇹🇭 Thailand</strong></div>
+        <div><strong>🇻🇳 Viet Nam</strong></div>
+        <div><strong>🇮🇩 Indonesia</strong></div>
+        <div><strong>🇲🇾 Malaysia</strong></div>
+        <div><strong>🇸🇬 Singapore</strong></div>
+        <div><strong>🇰🇷 Korea (South)</strong></div>
+        <div><strong>🇵🇭 Philippines</strong></div>
+        <div><strong>🇹🇷 Turkey</strong></div>
+        <div><strong>🇬🇷 Greece</strong></div>
+        <div><strong>🇳🇱 Netherlands</strong></div>
+        <div><strong>🇧🇪 Belgium</strong></div>
+        <div><strong>🇨🇭 Switzerland</strong></div>
+        <div><strong>🇦🇹 Austria</strong></div>
+        <div><strong>🇵🇹 Portugal</strong></div>
+        <div><strong>🇮🇪 Ireland</strong></div>
+        <div><strong>🇸🇪 Sweden</strong></div>
+        <div><strong>🇳🇴 Norway</strong></div>
+        <div><strong>🇩🇰 Denmark</strong></div>
+        <div><strong>🇫🇮 Finland</strong></div>
+        <div><strong>🇵🇱 Poland</strong></div>
+        <div><strong>🇨🇿 Czech Republic</strong></div>
+        <div><strong>🇭🇺 Hungary</strong></div>
+        <div><strong>🇭🇷 Croatia</strong></div>
+        <div><strong>🇲🇦 Morocco</strong></div>
+        <div><strong>🇪🇬 Egypt</strong></div>
+        <div><strong>🇿🇦 South Africa</strong></div>
+        <div><strong>🇰🇪 Kenya</strong></div>
+        <div><strong>🇹🇿 Tanzania</strong></div>
+        <div><strong>🇦🇪 UAE</strong></div>
+        <div><strong>🇮🇱 Israel</strong></div>
+        <div><strong>🇯🇴 Jordan</strong></div>
+        <div><strong>🇸🇦 Saudi Arabia</strong></div>
+        <div><strong>🇷🇺 Russia</strong></div>
+      </div>
+      <p style="margin-top: 15px; font-size: 12px; color: #7f8c8d; border-top: 1px solid #dee2e6; padding-top: 10px;">
+        💡 <strong>Note:</strong> Due to Neon database free tier limitations, only these 50 most popular countries are available. Try typing partial names like "United" for "United States" or "Korea" for "Korea (South)".
+      </p>
+    </div>
+  </div>
+
   <section id="map" class="ag-canvas">
     <svg class="ag-canvas_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       version="1.1" viewBox="0 0 1008 651">
@@ -394,6 +459,20 @@
     country_codes.forEach(code => {
       document.getElementById(code).style.fill = "<%= color %>"
     });
+  </script>
+  <script>
+    function toggleCountryList() {
+      const countryList = document.getElementById('countryList');
+      const button = event.target;
+
+      if (countryList.style.display === 'none' || countryList.style.display === '') {
+        countryList.style.display = 'block';
+        button.textContent = '📋 Hide Available Countries';
+      } else {
+        countryList.style.display = 'none';
+        button.textContent = '📋 Show Available Countries (50)';
+      }
+    }
   </script>
   <script src="./tour.js"></script>
 </body>

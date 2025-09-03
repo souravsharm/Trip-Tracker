@@ -25,7 +25,6 @@ let users = [];
 async function getUsers(){
   users = await db.query("SELECT * FROM users");
   if(users.rows.length > 0){
-    console.log(users.rows);
     return users = users.rows;
   }
   return [];
@@ -66,9 +65,22 @@ app.post("/add", async (req, res) => {
       "SELECT country_code FROM countries WHERE LOWER(country_name) LIKE '%' || $1 || '%';",
       [input.toLowerCase()]
     );
-    
+
+    // If no country matches found, show error with available countries list
+    if(result.rows.length === 0 ){
+      const countries = await checkVisisted(); // Get visited countries for the view
+      return res.render("index.ejs", {
+        countries: JSON.stringify(countries),
+        total: countries.length,
+        users: users,
+        color: findColor(currentUserId),
+        error: `❌ "${input}" not found! Only 50 countries are available due to Neon database free tier limitations. Click "Show Available Countries" to see the complete list.`
+      });
+    }
+
     const data = result.rows[0];
     const countryCode = data.country_code;
+
     try {
       await db.query(
         "INSERT INTO visited_countries (country_code, user_id) VALUES ($1, $2)",
@@ -79,12 +91,20 @@ app.post("/add", async (req, res) => {
       console.log(err);
     }
   } catch (err) {
-    console.log(err);
+    console.log("Database error:", err);
+    // If there's a database error, show a generic error message
+    const countries = await checkVisisted();
+    return res.render("index.ejs", {
+      countries: JSON.stringify(countries),
+      total: countries.length,
+      users: users,
+      color: findColor(currentUserId),
+      error: "❌ Database error occurred. Please try again."
+    });
   }
 });
 app.post("/user", async (req, res) => {
   currentUserId = req.body.user;
-  console.log("Current user ID set to:", currentUserId);
   if(req.body.add){
     return res.render('new.ejs')
   }
@@ -102,7 +122,6 @@ app.post("/new", async (req, res) => {
   });
 
   const result = await db.query("INSERT INTO users (name, color) VALUES ($1, $2) RETURNING *", [newUserName, newSelectedColor])
-  console.log("New user added:", result.rows[0]);
   res.redirect("/");
 });
 app.get("/deleteall", async (req, res) => {

@@ -104,6 +104,15 @@ CREATE TABLE visited_countries(
 - ✅ Real-world usage scenarios
 - ✅ Covers major tourist destinations and business hubs
 
+### **📋 Expandable Country List Feature**
+
+**New Interactive Feature:** Users can now click **"Show Available Countries (50)"** to see the complete list of supported countries. This helps users:
+
+- 🔍 **Discover available options** before typing
+- 💡 **Understand limitations** of the free tier
+- 🎯 **Find exact country names** to search for
+- 📱 **Browse in a responsive grid** layout
+
 **Included Countries (Most Popular Destinations):**
 
 **🌎 Major Global Powers:**

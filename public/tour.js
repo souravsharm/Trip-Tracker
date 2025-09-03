@@ -98,9 +98,16 @@ class DemoTour {
         action: 'highlight'
       },
       {
+        target: 'button[onclick*="toggleCountryList"]',
+        title: '📋 Available Countries List',
+        content: 'Click here to see all 50 countries available in our database. Due to free tier limitations, we can only support the most popular destinations.',
+        position: 'top',
+        action: 'highlight'
+      },
+      {
         target: 'body',
         title: '🎯 Your Travel Dashboard',
-        content: 'This is your personal travel dashboard. You can see all visited countries, switch between members, and track your adventures!',
+        content: 'This is your personal travel dashboard. You can see all visited countries, switch between members, and track your adventures! If a country isn\'t found, check the available countries list.',
         position: 'left',
         action: 'highlight'
       }

@@ -177,7 +177,8 @@ Your application now includes an **interactive demo tour** that guides new users
 4. **🔍 Smart Country Search** - Type country names with fuzzy matching
 5. **🚀 Add Country Button** - Submit countries to your list
 6. **🗺️ World Map** - View your visited countries
-7. **🎯 Complete Dashboard** - Overview of all features
+7. **📋 Available Countries List** - See all 50 supported countries
+8. **🎯 Complete Dashboard** - Overview of all features
 
 ### **For Developers:**
 - **Test Tour:** Open `test-tour.html` in your browser
