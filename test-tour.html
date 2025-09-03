@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Test - Family Travel Tracker</title>
+  <link rel="stylesheet" href="./public/styles/tour.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f5f5f5;
+    }
+    .tab-view {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    #map {
+      width: 100%;
+      height: 400px;
+      background: #e8f4f8;
+      border: 2px dashed #3498db;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    input[type="text"] {
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧪 Tour System Test Page</h1>
+  <p>This page simulates the Travel Tracker interface for testing the interactive tour.</p>
+
+  <!-- User Selection Area -->
+  <form class="tab-view tab-view-height-auto" action="/user" method="post">
+    <h3>👥 Select Member</h3>
+    <input type="submit" name="user" value="1" id="1">
+    <label for="1" style="background-color: teal;">Angela</label>
+
+    <input type="submit" name="user" value="2" id="2">
+    <label for="2" style="background-color: powderblue;">Jack</label>
+
+    <input type="submit" name="add" value="new" id="tab">
+    <label for="tab">Add new person</label>
+  </form>
+
+  <!-- Country Addition Form -->
+  <div class="container">
+    <h3>🌍 Add Countries You've Visited</h3>
+    <form action="/add" method="post">
+      <input type="text" id="country" name="country" placeholder="Enter country name (try 'France', 'Japan', etc.)">
+      <button type="submit" style="background-color: teal;">Add</button>
+    </form>
+
+    <!-- Mock Map Section -->
+    <section id="map">
+      <div style="text-align: center; color: #666;">
+        <h4>🗺️ Interactive World Map</h4>
+        <p>Visited countries will be highlighted here in your chosen color.</p>
+        <p style="font-size: 12px; color: #999;">(This is a mock map for tour testing)</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Tour Test Controls -->
+  <div style="margin-top: 30px; padding: 20px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px;">
+    <h3>🧪 Tour Test Controls</h3>
+    <button onclick="localStorage.removeItem('familyTravelTourCompleted'); location.reload();">🔄 Reset Tour (Test Welcome)</button>
+    <button onclick="tour ? tour.start() : alert('Tour not loaded yet')">▶️ Start Tour Manually</button>
+    <button onclick="tour ? tour.skip() : alert('Tour not loaded yet')">⏭️ Skip Tour</button>
+    <p><small>Refresh the page to see the welcome modal again after resetting.</small></p>
+  </div>
+
+  <script src="./public/tour.js"></script>
+</body>
+</html>

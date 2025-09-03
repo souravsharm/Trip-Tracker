@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Tracker</title>
   <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/tour.css">
 </head>
 
 <body>
@@ -23,11 +24,11 @@
   </form>
 
   <form action="/add" method="post">
-    <input type="text" name="country" autofocus placeholder="<%= locals.error ? error :  'Enter country name'%>">
+    <input type="text" id="country" name="country" autofocus placeholder="<%= locals.error ? error :  'Enter country name'%>">
     <button type="submit" style="background-color: <%= color %>;">Add</button>
   </form>
 
-  <section class="ag-canvas">
+  <section id="map" class="ag-canvas">
     <svg class="ag-canvas_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       version="1.1" viewBox="0 0 1008 651">
       <path id="AE" title="United Arab Emirates"
@@ -394,6 +395,7 @@
       document.getElementById(code).style.fill = "<%= color %>"
     });
   </script>
+  <script src="./tour.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
-# 🌍 Family Travel Tracker
+# 🌍 Travel Tracker
 
-**A beautiful web application for tracking family travel adventures around the world!**
+**A beautiful web application for tracking travel adventures around the world!**
 
 [![Web App](https://img.shields.io/badge/Web%20App-Live-brightgreen)](https://trip-tracker-rydl.onrender.com/)
 
@@ -103,18 +103,18 @@ Please see: **[📖 DEMO_TOUR_GUIDE.md](./DEMO_TOUR_GUIDE.md)**
 
 ## 🎮 Usage Scenarios
 
-### Family Travel Planning
-- Track where each family member has been
+### Travel Planning
+- Track where each member has been
 - Plan future trips based on unvisited destinations
-- Create family travel goals and achievements
+- Create travel goals and achievements
 
 ### Educational Tool
 - Learn about world geography
 - Discover new countries and cultures
-- Family bonding through shared experiences
+- Group bonding through shared experiences
 
 ### Travel Competition
-- Challenge family members to visit new places
+- Challenge members to visit new places
 - Track progress with color-coded achievements
 - Create friendly competition
 
@@ -158,6 +158,38 @@ This project is part of educational materials from Angela Yu's Web Development c
 
 ---
 
+## 🎯 Interactive Demo Tour
+
+Your application now includes an **interactive demo tour** that guides new users through all the features!
+
+### **Tour Features:**
+- **🎯 Smart Onboarding** - Automatically shows for first-time visitors
+- **📍 Step-by-Step Guidance** - Highlights each feature with clear instructions
+- **🎨 Visual Highlights** - Pulsing animations draw attention to important elements
+- **📱 Responsive Design** - Works perfectly on desktop and mobile
+- **💾 Remembers Completion** - Won't show again once completed
+- **🔄 Restartable** - Blue tour button (🎯) appears after completion for re-visiting
+
+### **Tour Steps:**
+1. **👥 Member Selection** - How to switch between users
+2. **➕ Add New Person** - Click the "Add new person" button
+3. **🌍 Country Addition Form** - Use the form to add countries
+4. **🔍 Smart Country Search** - Type country names with fuzzy matching
+5. **🚀 Add Country Button** - Submit countries to your list
+6. **🗺️ World Map** - View your visited countries
+7. **🎯 Complete Dashboard** - Overview of all features
+
+### **For Developers:**
+- **Test Tour:** Open `test-tour.html` in your browser
+- **Reset Tour:** Clear `familyTravelTourCompleted` from localStorage
+- **Customize Steps:** Edit the `steps` array in `public/tour.js`
+
+---
+
 **Happy Traveling! ✈️🌍**
 
 *Track your adventures, create memories, and explore the world together!*
+
+---
+
+**🎯 Pro Tip:** New users will automatically see the interactive tour when they first visit your site!

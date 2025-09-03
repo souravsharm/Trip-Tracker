@@ -1,6 +1,6 @@
-# 🌍 Family Travel Tracker - Demo Tour Guide
+# 🌍 Travel Tracker - Demo Tour Guide
 
-Welcome to the Family Travel Tracker! This interactive web application allows family members to track and visualize their travel adventures around the world. Each family member gets their own color, and visited countries are highlighted on an interactive world map.
+Welcome to the Travel Tracker! This interactive web application allows members to track and visualize their travel adventures around the world. Each member gets their own color, and visited countries are highlighted on an interactive world map.
 
 ## 🎯 Project Overview
 
