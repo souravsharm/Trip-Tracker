@@ -1,5 +1,5 @@
 /node_modules
 .env
 queries*
-solutions*
+solution*
 package-lock.json
